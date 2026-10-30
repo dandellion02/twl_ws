@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.vscode/*.db
+build/
+install/
+log/
+
+# VS Code database
+**/.vscode/
+*.db
+*.db-shm
+*.db-wal
+
+# Python cache
+__pycache__/
+*.pyc

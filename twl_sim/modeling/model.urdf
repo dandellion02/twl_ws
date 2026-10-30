@@ -1,0 +1,285 @@
+<?xml version="1.0" ?>
+<robot name="wheel_biped_robot">
+
+  <gazebo>
+    <static>false</static>
+  </gazebo>
+<!--
+  <link name="base_footprint">
+    <inertial>
+      <mass value="0.001"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
+    </inertial>
+  </link>
+
+  <joint name="base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0.5"/>
+ </joint>
+-->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/MainBody_Collision.stl"/>
+      </geometry>
+      <material name="white">
+        <color rgba="1 1 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/MainBody_Collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="1.41404421338"/>
+      <origin rpy="0 0 0" xyz="0.01819659659 -0.00024888409 0.03542269696"/>
+      <inertia ixx="0.004191453724966" ixy="0.000019611026617" ixz="0.000183001274225" iyy="0.006619178754250" iyz="0.000006399950187" izz="0.007735669494723"/>
+    </inertial>
+  </link>
+
+  <link name="RightActiveThigh_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/ThighLink_Active_Right_Collision.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/ThighLink_Active_Right_Collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.04241994494"/>
+      <origin rpy="0 0 0" xyz="-0.04846902377 -0.00461143086 0.00204281842"/>
+      <inertia ixx="0.0000050068969963" ixy="-0.00000644424742526" ixz="-0.00000084635096499" iyy="0.00004884985593152" iyz="-0.0000004043837437" izz="0.00004992941023364"/>
+    </inertial>
+  </link>
+
+  <link name="RightCalf_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/Calf_Link_Right_Collision.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/Calf_Link_Right_Collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.33823782393"/>
+      <origin rpy="0 0 0" xyz="0.16971091698 0.00392574726 0.00713537305"/>
+      <inertia ixx="0.000108187868306" ixy="0.00000568913762061" ixz="-0.0000343484358461" iyy="0.00084962131645905" iyz="0.00000026626892472" izz="0.00082031486080829"/>
+    </inertial>
+  </link>
+
+  <link name="RightWheel_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/Wheel_Right_Collision.stl"/>
+      </geometry>
+      <material name="black">
+        <color rgba="0.1 0.1 0.1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/Wheel_Right_Collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.21411770281"/>
+      <origin rpy="0 0 0" xyz="-0.00000761 0.48438625 -0.00000031"/>
+      <inertia ixx="0.00033410460295742" ixy="-0.000000000692262" ixz="-0.00000000004512" iyy="0.00064074279507983" iyz="0.000000000005987" izz="0.00033410465585037"/>
+    </inertial>
+  </link>
+<!--
+  <link name="RightPassiveThigh_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/ThighLink_Passive_Right_Collision.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/ThighLink_Passive_Right_Collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.03926139565"/>
+      <origin rpy="0 0 0" xyz="-0.07721916722 -0.01027201342 -0.00386042407"/>
+      <inertia ixx="0.000005253535542220" ixy="-0.000005957246863360" ixz="0.000002247315833890" iyy="0.000060185494515380" iyz="0.000000799056070920" izz="0.000060398225116460"/>
+    </inertial>
+  </link>
+-->
+  <link name="LeftActiveThigh_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/ThighLink_Active_Left_Collision.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/ThighLink_Active_Left_Collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.04241994494"/>
+      <origin rpy="0 0 0" xyz="-0.04846903323 0.00461143087 0.00204282631"/>
+      <inertia ixx="0.00000500689568398" ixy="0.00000644424555368" ixz="-0.00000084635023128" iyy="0.00004884983835373" iyz="0.00000040438523501" izz="0.00004992939396428"/>
+    </inertial>
+  </link>
+
+  <link name="LeftCalf_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/Calf_Link_Left_Collision.stl"/>
+      </geometry>
+      <material name="white"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/Calf_Link_Left_Collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.33823782393"/>
+      <origin rpy="0 0 0" xyz="0.1697107318 -0.00392577446 0.00713663078"/>
+      <inertia ixx="0.0001081875337499" ixy="-0.00000568874489609" ixz="-0.0000343493986893" iyy="0.00084962461514512" iyz="-0.00000027220346797" izz="0.00082031828517488"/>
+    </inertial>
+  </link>
+
+  <link name="LeftWheel_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/Wheel_Left_Collision.stl"/>
+      </geometry>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/Wheel_Left_Collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.23711770281"/>
+      <origin rpy="0 0 0" xyz="-0.00000687 0.43740164 -0.00000028"/>
+      <inertia ixx="0.00037716950236306" ixy="-0.000000000684531" ixz="-0.000000000114686" iyy="0.00072399902807526" iyz="0.000000000006205" izz="0.000377169522061"/>
+    </inertial>
+  </link>
+<!--  
+  <link name="LeftPassiveThigh_link">
+    <visual>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/ThighLink_Passive_Left_Collision.stl"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <mesh filename="package://twl_sim/modeling/meshes/stl/ThighLink_Passive_Left_Collision.stl"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.03926139565"/>
+      <origin rpy="0 0 0" xyz="-0.07721916722 -0.01027201342 -0.00386042407"/>
+      <inertia ixx="0.000005253535542220" ixy="-0.000005957246863360" ixz="0.000002247315833890" iyy="0.000060185494515380" iyz="-0.000000799056070920" izz="0.000060398225116460"/>
+    </inertial>
+  </link>
+-->
+  <link name="imu_link">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="orange">
+        <color rgba="1.0 0.5 0.0 1.0"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.01"/>
+      <inertia ixx="1.66e-6" ixy="0" ixz="0" iyy="1.66e-6" iyz="0" izz="1.66e-6"/>
+    </inertial>
+  </link>
+
+  <joint name="Base_RightActiveThigh" type="revolute">
+    <parent link="base_link"/>
+    <child link="RightActiveThigh_link"/>
+    <origin rpy="0 -1.221206878 0" xyz="-0.064952 -0.086 0.0375"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="-1.57" upper="1.57" velocity="10"/>
+  </joint>
+
+  <joint name="RightActiveThigh_RightCalf" type="revolute">
+    <parent link="RightActiveThigh_link"/>
+    <child link="RightCalf_link"/>
+    <origin rpy="0 2.343715386 0" xyz="-0.077 -0.016 0.00"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="-2.0" upper="1.57" velocity="10"/>
+    <mimic joint="Base_RightActiveThigh" multiplier="-1.2" offset="0.0"/>
+  </joint>
+
+  <joint name="RightCalf_RightWheel" type="continuous">
+    <parent link="RightCalf_link"/> 
+    <child link="RightWheel_link"/>
+    <origin rpy="0 0 0" xyz="0.187 -0.021 0.008"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+<!--
+  <joint name="Base_RightPassiveThigh" type="revolute">
+    <parent link="base_link"/>
+    <child link="RightPassiveThigh_link"/>
+    <origin rpy="0 -0.8538150701 0" xyz="0.0 -0.081 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="-1.57" upper="1.57" velocity="10"/>
+  </joint>
+-->
+  <joint name="Base_LeftActiveThigh" type="revolute">
+    <parent link="base_link"/>
+    <child link="LeftActiveThigh_link"/>
+    <origin rpy="0 -1.221206878 0" xyz="-0.064952 0.086 0.0375"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="-1.57" upper="1.57" velocity="10"/>
+  </joint>
+
+  <joint name="LeftActiveThigh_LeftCalf" type="revolute">
+    <parent link="LeftActiveThigh_link"/>
+    <child link="LeftCalf_link"/>
+    <origin rpy="0 2.343715386 0" xyz="-0.077 0.016 0.00"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="-2.0" upper="1.57" velocity="10"/>
+    <mimic joint="Base_LeftActiveThigh" multiplier="-1.2" offset="0.0"/>
+  </joint>
+
+  <joint name="LeftCalf_LeftWheel" type="continuous">
+    <parent link="LeftCalf_link"/>
+    <child link="LeftWheel_link"/>
+    <origin rpy="0 0 0" xyz="0.187 0.021 0.008"/>
+    <axis xyz="0 1 0"/>
+  </joint>
+<!--
+  <joint name="Base_LeftPassiveThigh" type="revolute">
+    <parent link="base_link"/>
+    <child link="LeftPassiveThigh_link"/>
+    <origin rpy="0 -0.8538150701 0" xyz="0.0 0.081 0.0"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="100" lower="-1.2212" upper="0.518" velocity="10"/>
+  </joint>
+-->
+  <joint name="Base_IMU" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+  </joint>
+
+</robot>
